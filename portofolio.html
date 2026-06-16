@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio – MALU KONTRAKTOR</title>
+  <link rel="icon" href="./images/image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <style>
+    /* ═══════════════════════════════════════════════════
+       PORTOFOLIO CARD GRID — referensi style
+    ═══════════════════════════════════════════════════ */
+
+    /* ── Card grid ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .card-porto {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,.07);
+      transition: transform .28s ease, box-shadow .28s ease;
+      cursor: pointer;
+      display: block;
+    }
+    body.dark-mode .card-porto {
+      background: var(--bg-2);
+      box-shadow: 0 2px 16px rgba(0,0,0,.28);
+    }
+    .card-porto:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 32px rgba(0,0,0,.13);
+    }
+
+    /* foto + skeleton shimmer loading */
+    .card-porto__thumb {
+      position: relative;
+      width: 100%;
+      padding-top: 68%; /* rasio ~3:2 */
+      overflow: hidden;
+      background: linear-gradient(
+        100deg,
+        #e8e6e1 30%,
+        #f3f1ed 50%,
+        #e8e6e1 70%
+      );
+      background-size: 200% 100%;
+      animation: shimmer 1.4s ease-in-out infinite;
+    }
+    body.dark-mode .card-porto__thumb {
+      background: linear-gradient(
+        100deg,
+        rgba(255,255,255,.04) 30%,
+        rgba(255,255,255,.09) 50%,
+        rgba(255,255,255,.04) 70%
+      );
+      background-size: 200% 100%;
+    }
+    @keyframes shimmer {
+      0%   { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    .card-porto__thumb img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .55s ease, opacity .4s ease;
+      opacity: 0;
+    }
+    .card-porto__thumb img.is-loaded {
+      opacity: 1;
+    }
+    .card-porto__thumb.is-loaded {
+      animation: none;
+      background: none;
+    }
+    .card-porto:hover .card-porto__thumb img {
+      transform: scale(1.07);
+    }
+
+    /* lokasi di bawah foto */
+    .card-porto__body {
+      padding: .85rem 1rem .95rem;
+      text-align: center;
+    }
+    .card-porto__loc {
+      font-size: .8rem;
+      color: var(--ink-2);
+      font-family: 'Inter', sans-serif;
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+    }
+    .card-porto__loc i {
+      color: var(--orange);
+      font-size: .72rem;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .card-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    }
+    @media (max-width: 560px) {
+      .card-grid { grid-template-columns: 1fr; gap: .85rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+
+<!-- ── Page Hero ── -->
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb-nav">
+      <a href="index.html">Beranda</a><span>/</span><span class="current">Portofolio</span>
+    </div>
+    <h1>Portofolio <em>Kami</em></h1>
+    <p>Karya yang kami banggakan — dibangun dengan sepenuh hati di Bali.</p>
+  </div>
+</div>
+
+<!-- ── Grid Portofolio ── -->
+<section style="background: var(--bg-2); padding: 5rem 0;">
+  <div class="container">
+
+    <!-- Card Grid -->
+    <div class="card-grid reveal-up" id="portoGrid">
+
+      <!-- 1 -->
+      <a href="./images/pt11.png" data-lightbox="porto" data-title="Syamsi House · Bali" class="card-porto">
+        <div class="card-porto__thumb">
+          <img src="./images/pt11.png" alt="Syamsi House" loading="lazy">
+        </div>
+        <div class="card-porto__body">
+          <span class="card-porto__loc"><i class="fas fa-map-marker-alt"></i>Bali</span>
+        </div>
+      </a>
+
+      <!-- 2 -->
+      <a href="./images/pt2.png" data-lightbox="porto" data-title="Rumah Tan · Bali" class="card-porto">
+        <div class="card-porto__thumb">
+          <img src="./images/pt2.png" alt="Rumah Tan" loading="lazy">
+        </div>
+        <div class="card-porto__body">
+          <span class="card-porto__loc"><i class="fas fa-map-marker-alt"></i>Bali</span>
+        </div>
+      </a>
+
+      <!-- 3 -->
+      <a href="./images/pt3.png" data-lightbox="porto" data-title="Roji House · Bali" class="card-porto">
+        <div class="card-porto__thumb">
+          <img src="./images/pt3.png" alt="Roji House" loading="lazy">
+        </div>
+        <div class="card-porto__body">
+          <span class="card-porto__loc"><i class="fas fa-map-marker-alt"></i>Bali</span>
+        </div>
+      </a>
+
+      <!-- 4 -->
+      <a href="./images/pt4.png" data-lightbox="porto" data-title="Haryono House · Bali" class="card-porto">
+        <div class="card-porto__thumb">
+          <img src="./images/pt4.png" alt="Haryono House" loading="lazy" style="object-position:center 60%">
+        </div>
+        <div class="card-porto__body">
+          <span class="card-porto__loc"><i class="fas fa-map-marker-alt"></i>Bali</span>
+        </div>
+      </a>
+
+      <!-- 5 -->
+      <a href="./images/pt6.png" data-lightbox="porto" data-title="Agus House · Bali" class="card-porto">
+        <div class="card-porto__thumb">
+          <img src="./images/pt6.png" alt="Agus House" loading="lazy">
+        </div>
+        <div class="card-porto__body">
+          <span class="card-porto__loc"><i class="fas fa-map-marker-alt"></i>Bali</span>
+        </div>
+      </a>
+
+      <!-- 6 -->
+      <a href="./images/pt7.png" data-lightbox="porto" data-title="V House · Bali" class="card-porto">
+        <div class="card-porto__thumb">
+          <img src="./images/pt7.png" alt="V House" loading="lazy">
+        </div>
+        <div class="card-porto__body">
+          <span class="card-porto__loc"><i class="fas fa-map-marker-alt"></i>Bali</span>
+        </div>
+      </a>
+
+      <!-- 7 -->
+      <a href="./images/pt5.png" data-lightbox="porto" data-title="Ruko 3 Lantai · Bali" class="card-porto">
+        <div class="card-porto__thumb">
+          <img src="./images/pt5.png" alt="Ruko 3 Lantai" loading="lazy">
+        </div>
+        <div class="card-porto__body">
+          <span class="card-porto__loc"><i class="fas fa-map-marker-alt"></i>Bali</span>
+        </div>
+      </a>
+
+      <!-- 8 -->
+      <a href="./images/pt8.png" data-lightbox="porto" data-title="Renovasi Fasad · Bali" class="card-porto">
+        <div class="card-porto__thumb">
+          <img src="./images/pt8.png" alt="Renovasi Fasad" loading="lazy">
+        </div>
+        <div class="card-porto__body">
+          <span class="card-porto__loc"><i class="fas fa-map-marker-alt"></i>Bali</span>
+        </div>
+      </a>
+
+      <!-- 9 -->
+      <a href="./images/pt9.png" data-lightbox="porto" data-title="Interior Ruang Tamu · Bali" class="card-porto">
+        <div class="card-porto__thumb">
+          <img src="./images/pt9.png" alt="Interior Ruang Tamu" loading="lazy">
+        </div>
+        <div class="card-porto__body">
+          <span class="card-porto__loc"><i class="fas fa-map-marker-alt"></i>Bali</span>
+        </div>
+      </a>
+
+    </div><!-- /card-grid -->
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-band reveal-up">
+  <div class="container cta-content">
+    <span class="section-eyebrow" style="color:rgba(255,255,255,.8);">Proyek Selanjutnya</span>
+    <h2>Jadikan Impian Anda<br>Portofolio Berikutnya</h2>
+    <p>Hubungi kami hari ini dan mulai perjalanan menuju bangunan impian Anda.</p>
+    <div class="cta-btns">
+      <a href="kontak.html" class="btn-white">Mulai Proyek</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/jquery/jquery-migrate.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+<script src="./js/shared.js"></script>
+<script>
+  renderNavbar('portofolio'); renderFooter();
+  initNavbar(false); initDarkMode(); initReveal();
+  initPortoSkeleton(); initPortoLightbox();
+</script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak – MALU KONTRAKTOR</title>
+  <link rel="icon" href="./images/image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb-nav">
+      <a href="index.html">Beranda</a><span>/</span><span class="current">Kontak</span>
+    </div>
+    <h1>Hubungi <em>Kami</em></h1>
+    <p>Konsultasi pertama gratis, tanpa komitmen. Kami siap mendengar dan membantu proyek Anda.</p>
+  </div>
+</div>
+
+<!-- ══ KONTAK UTAMA ════════════════════════════════════ -->
+<section style="background:var(--bg);">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- Info Kontak -->
+      <div class="reveal-left">
+        <span class="section-eyebrow"><span class="bracket-word">Info Kontak</span></span>
+        <h2 class="section-title" style="margin-bottom:2rem;">Kami Ada untuk <em>Anda</em></h2>
+
+        <div class="kontak-item">
+          <div class="kontak-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="kontak-item-text">
+            <strong>Alamat</strong>
+            <span>Alamat jln imam bonjol gang marga agung no26<br>Denpasar, Bali</span>
+          </div>
+        </div>
+
+        <div class="kontak-item">
+          <div class="kontak-icon"><i class="fab fa-whatsapp"></i></div>
+          <div class="kontak-item-text">
+            <strong>WhatsApp</strong>
+            <a href="https://wa.me/6281236726476" target="_blank">0812-3672-6476</a>
+          </div>
+        </div>
+
+        <div class="kontak-item">
+          <div class="kontak-icon"><i class="fas fa-envelope"></i></div>
+          <div class="kontak-item-text">
+            <strong>Email</strong>
+            <a href="mailto:info@malukontraktor.com">info@malukontraktor.com</a>
+          </div>
+        </div>
+
+        
+
+        <p style="font-size:1.3rem;color:var(--ink-2);margin:2rem 0 1rem;">Ikuti kami di media sosial</p>
+        <div class="sosmed-row" style="margin-bottom:1rem;">
+          <a href="https://www.instagram.com/malu_kontraktor?igsh=MTNxeXFmcHF5ZTVhMQ==" class="sosmed-btn" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61590833872858" class="sosmed-btn" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/6281236726476" class="sosmed-btn" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.tiktok.com/@malu.kontraktor?_r=1&_t=ZS-9761malrZTj" class="sosmed-btn" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+
+        <!-- Peta -->
+        
+        </div>
+      </div>
+
+      <!-- Form Kontak -->
+      <div class="reveal-right">
+        <span class="section-eyebrow"><span class="bracket-word">Kirim Pesan</span></span>
+        <h2 class="section-title" style="margin-bottom:2rem;">Ceritakan <em>Proyek Anda</em></h2>
+        <form class="kontak-form" onsubmit="handleKontakForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nama Lengkap *</label>
+              <input type="text" id="fNama" placeholder="Nama Anda" required>
+            </div>
+            <div class="form-group">
+              <label>Nomor WhatsApp *</label>
+              <input type="tel" id="fTelp" placeholder="08xxxxxx" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="email@contoh.com">
+          </div>
+          <div class="form-group">
+            <label>Layanan yang Dibutuhkan</label>
+            <select id="fLayanan">
+              <option value="">— Pilih Layanan —</option>
+              <option>Pembangunan Rumah</option>
+              <option>Renovasi Total</option>
+              <option>Interior &amp; Finishing</option>
+              <option>Bangunan Komersial</option>
+              <option>Jasa Tenaga / + Material</option>
+              
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Estimasi Budget</label>
+              <select>
+                <option value="">— Pilih Range —</option>
+                <option>Di bawah Rp 50 juta</option>
+                <option>Rp 50 – 150 juta</option>
+                <option>Rp 150 – 500 juta</option>
+                <option>Di atas Rp 500 juta</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Target Mulai Proyek</label>
+              <select>
+                <option value="">— Pilih Waktu —</option>
+                <option>Secepatnya</option>
+                <option>1–3 bulan lagi</option>
+                <option>3–6 bulan lagi</option>
+                <option>Lebih dari 6 bulan</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Deskripsi Proyek *</label>
+            <textarea id="fPesan" rows="5" placeholder="Ceritakan detail proyek Anda: lokasi, ukuran, kebutuhan khusus, dll..." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            <i class="fab fa-whatsapp"></i> Kirim via WhatsApp
+          </button>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ KONTAK ════════════════════════════════════════ -->
+
+<div id="footer-placeholder"></div>
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/jquery/jquery-migrate.min.js"></script>
+<script src="./js/shared.js"></script>
+<script>
+  renderNavbar('kontak'); renderFooter();
+  initNavbar(false); initDarkMode(); initReveal(); initFaq();
+</script>
+</body>
+</html>
